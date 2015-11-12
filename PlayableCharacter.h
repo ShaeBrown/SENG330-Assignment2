@@ -10,13 +10,16 @@
 
 #include"CharacterPrototype.h"
 
+#include<string>
+
 class PlayableCharacter:public CharacterPrototype {
 public:
-    PlayableCharacter();
+    PlayableCharacter(std::string name);
     PlayableCharacter(const PlayableCharacter& orig);
     virtual CharacterPrototype* clone();
     virtual ~PlayableCharacter();
 private:
+
 
 };
 

@@ -6,11 +6,25 @@
  */
 
 #include "CharacterPrototype.h"
+#include<iostream>
 
-CharacterPrototype::CharacterPrototype() {
+
+
+CharacterPrototype::CharacterPrototype(std::string name, std::string type) {
+    this->name = name;
+    this->type = type;
 }
 
-CharacterPrototype::CharacterPrototype(const CharacterPrototype& orig) {
+void CharacterPrototype::setName(std::string name) {
+    this->name = name;
+}
+
+std::string CharacterPrototype::getName() {
+    return this->name;
+}
+
+std::string CharacterPrototype::getType() {
+    return this->type;
 }
 
 CharacterPrototype::~CharacterPrototype() {

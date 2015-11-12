@@ -8,14 +8,21 @@
 #ifndef CHARACTERPROTOTYPE_H
 #define	CHARACTERPROTOTYPE_H
 
+#include <string>
+
+
 class CharacterPrototype {
 public:
-    CharacterPrototype();
-    CharacterPrototype(const CharacterPrototype& orig);
+    CharacterPrototype(std::string name, std::string type);
+    CharacterPrototype(const CharacterPrototype& orig) = default;
     virtual CharacterPrototype* clone() = 0;
+    virtual void setName(std::string name);
+    virtual std::string getName();
+    virtual std::string getType();
     virtual ~CharacterPrototype();
-private:
-
+protected:
+    std::string name;
+    std::string type;
 };
 
 #endif	/* CHARACTERPROTOTYPE_H */

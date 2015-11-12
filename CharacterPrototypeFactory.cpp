@@ -12,8 +12,8 @@ CharacterPrototype* CharacterPrototypeFactory::AI;
 CharacterPrototype* CharacterPrototypeFactory::Playable;
 
 CharacterPrototypeFactory::CharacterPrototypeFactory() {
-    AI = new AICharacter();
-    Playable = new PlayableCharacter();
+    this->AI = new AICharacter("defaultAI");
+    this->Playable = new PlayableCharacter("defaultPlayable");
 }
 
 CharacterPrototype* CharacterPrototypeFactory::getAI() {

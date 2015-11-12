@@ -8,11 +8,11 @@
 #ifndef AICHARACTER_H
 #define	AICHARACTER_H
 
-#include "CharacterPrototype.h"
+#include"CharacterPrototype.h"
 
-class AICharacter:public CharacterPrototype {
+class AICharacter: public CharacterPrototype {
 public:
-    AICharacter();
+    AICharacter(std::string);
     AICharacter(const AICharacter& orig);
     virtual CharacterPrototype* clone();
     virtual ~AICharacter();
