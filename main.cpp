@@ -4,39 +4,72 @@
  *
  * Created on November 11, 2015, 3:18 PM
  */
-
 #include <cstdlib>
-#include <iostream>
+#include <fstream>
+#include <string>
 #include <list>
-#include "CharacterPrototypeFactory.h"
+#include <iostream>
+
+#include"CharacterPrototypeFactory.h"
+#include"CharacterProtobuf.pb.h"
 
 using namespace std;
 
-/*
- * 
- */
-void printPlayerList(list<CharacterPrototype*> players) {
-    cout << "\n";
-    cout << "Current players in the game\n";
-    cout << "---------------------------\n";
-    std::list<CharacterPrototype*>::iterator iterator;
-    CharacterPrototype* character;
-    for (iterator=players.begin(); iterator != players.end(); ++iterator) {
-        character = (CharacterPrototype*)*iterator;
-        cout << character->getType() << ": " << character->getName() << "\n";
+
+
+void printPlayers(const CharacterList& players)
+{
+
+    for (int i = 0; i < players.character_size() ; i++) {
+        
+        const Character& character = players.character(i);
+        string type = character.type() == Character_Type::Character_Type_AI ? "AI" : "Playable";
+        cout << type << ": " << character.name() << "\n";
     }
+    cout << "\n";
+}
+
+void serialize(CharacterList& list, CharacterPrototype* character) {
+    Character* protoCharacter = list.add_character();
+    protoCharacter->set_name(character->getName());
+    if (character->getType().compare("AI") == 0) 
+        protoCharacter->set_type(Character_Type::Character_Type_AI);
+    else
+        protoCharacter->set_type(Character_Type::Character_Type_Playable);
 }
 
 
 int main(int argc, char** argv) {
     
     CharacterPrototypeFactory* factory = new CharacterPrototypeFactory();
-    list<CharacterPrototype*> players;
+    CharacterList players;
+    
+    GOOGLE_PROTOBUF_VERIFY_VERSION;
+    
+  
+    string file = "characters.txt";
+    // Read the existing characters
+    fstream input(file, ios::in | ios::binary);
+    if (!input) 
+    {
+        cout << "Creating a new file to save characters" << endl;
+        cout << "\n";
+    } 
+    else if (!players.ParseFromIstream(&input)) 
+    {
+        cerr << "Failed to parse saved characters." << endl;
+        return EXIT_FAILURE;
+    }
+    
+     cout << "\n";
+    cout << "Players already created------------------\n";
+    cout << "-----------------------------------------\n";
+    printPlayers(players);
     
     cout << "Welcome to player initialization\n";
-    cout << "--------------------------------\n";
+    cout << "---------------------------------------------------\n";
     cout << "\n";
-    cout << "How many total players will be in this game?\n";
+    cout << "How many total players will be  added in this game?\n";
     
     int num_players;
     cin >> num_players;
@@ -46,32 +79,50 @@ int main(int argc, char** argv) {
         return EXIT_FAILURE;
     }
     
-    string input;
+    string name;
     int i;
     for (i = 0; i < num_players; i++) {
+        cout << "\n";
         cout << "Creating a playable character\n";
         cout << "Please enter the player's name or DONE and the remaining "
                 << num_players - i << " players will be made into AI players\n";
-        cin >> input;
-        if (!input.compare("DONE"))
+        cout << "\n";
+        cin >> name;
+        if (!name.compare("DONE"))
             break;
         else {
             CharacterPrototype* playable = factory->getPlayable();
-            playable->setName(input);
-            players.push_back(playable);
+            playable->setName(name);
+            serialize(players, playable);
         }
     }
     
     for (int j = i; j < num_players; j++) {
+        cout << "\n";
         cout << "Creating an AI character\n";
         cout << "Please enter the players name\n";
-        cin >> input;
+        cout << "\n";
+        cin >> name;
         CharacterPrototype* AI = factory->getAI();
-        AI->setName(input);
-        players.push_back(AI);
+        AI->setName(name);
+        serialize(players, AI);
     }
     
-    printPlayerList(players);
+    
+    fstream output(file, ios::out | ios::trunc | ios::binary);
+    if (!players.SerializeToOstream(&output)) 
+    {
+        cerr << "Failed to save new characters" << endl;
+        return EXIT_FAILURE;
+    }
+    
+    cout << "\n";
+    cout << "All players, " << num_players << " added---------------------\n";
+    cout << "-----------------------------------------\n";
+    printPlayers(players);
+    
+    
+    google::protobuf::ShutdownProtobufLibrary();
     
     return EXIT_SUCCESS;
 }

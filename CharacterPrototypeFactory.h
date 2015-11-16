@@ -11,6 +11,7 @@
 #include"CharacterPrototype.h"
 #include"AICharacter.h"
 #include"PlayableCharacter.h"
+#include"CharacterProtobuf.pb.h"
 
 class CharacterPrototypeFactory {
 public:
@@ -22,7 +23,7 @@ public:
 private:
     static CharacterPrototype* AI;
     static CharacterPrototype* Playable;
-
+    static CharacterList players;
 };
 
 #endif	/* CHARACTERPROTOTYPEFACTORY_H */

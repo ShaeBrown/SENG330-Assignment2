@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<configurationDescriptor version="95">
+<configurationDescriptor version="97">
   <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
@@ -17,6 +17,9 @@
                    displayName="Source Files"
                    projectFiles="true">
       <itemPath>AICharacter.cpp</itemPath>
+      <itemPath>CharacterProtobuf.pb.cc</itemPath>
+      <itemPath>CharacterProtobuf.pb.h</itemPath>
+      <itemPath>CharacterProtobuf.proto</itemPath>
       <itemPath>CharacterPrototype.cpp</itemPath>
       <itemPath>CharacterPrototypeFactory.cpp</itemPath>
       <itemPath>PlayableCharacter.cpp</itemPath>
@@ -34,22 +37,38 @@
       <itemPath>Makefile</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>../../../../../Software/protobuf-2.4.1</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="Debug" type="1">
       <toolsSet>
         <compilerSet>default</compilerSet>
         <dependencyChecking>true</dependencyChecking>
-        <rebuildPropChanged>false</rebuildPropChanged>
+        <rebuildPropChanged>true</rebuildPropChanged>
       </toolsSet>
       <compileType>
         <ccTool>
           <standard>8</standard>
+          <commandLine>-pthread -lprotobuf -lpthread</commandLine>
+          <warningLevel>2</warningLevel>
         </ccTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerOptionItem>`pkg-config --libs protobuf`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
       <item path="AICharacter.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="AICharacter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CharacterProtobuf.pb.cc" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CharacterProtobuf.pb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CharacterProtobuf.proto" ex="false" tool="3" flavor2="0">
       </item>
       <item path="CharacterPrototype.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -89,6 +108,12 @@
       <item path="AICharacter.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="AICharacter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CharacterProtobuf.pb.cc" ex="false" tool="1" flavor2="0">
+      </item>
+      <item path="CharacterProtobuf.pb.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="CharacterProtobuf.proto" ex="false" tool="3" flavor2="0">
       </item>
       <item path="CharacterPrototype.cpp" ex="false" tool="1" flavor2="0">
       </item>

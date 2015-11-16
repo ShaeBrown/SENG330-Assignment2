@@ -6,7 +6,7 @@
  */
 
 #include"CharacterPrototypeFactory.h"
-
+#include"CharacterProtobuf.pb.h"
 
 CharacterPrototype* CharacterPrototypeFactory::AI;
 CharacterPrototype* CharacterPrototypeFactory::Playable;

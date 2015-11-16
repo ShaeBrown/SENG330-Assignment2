@@ -21,7 +21,7 @@ FC=gfortran
 AS=as
 
 # Macros
-CND_PLATFORM=GNU-Linux-x86
+CND_PLATFORM=GNU-Linux
 CND_DLIB_EXT=so
 CND_CONF=Debug
 CND_DISTDIR=dist
@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/AICharacter.o \
+	${OBJECTDIR}/CharacterProtobuf.pb.o \
 	${OBJECTDIR}/CharacterPrototype.o \
 	${OBJECTDIR}/CharacterPrototypeFactory.o \
 	${OBJECTDIR}/PlayableCharacter.o \
@@ -46,8 +47,8 @@ OBJECTFILES= \
 CFLAGS=
 
 # CC Compiler Flags
-CCFLAGS=
-CXXFLAGS=
+CCFLAGS=-pthread -lprotobuf -lpthread
+CXXFLAGS=-pthread -lprotobuf -lpthread
 
 # Fortran Compiler Flags
 FFLAGS=
@@ -56,7 +57,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=`pkg-config --libs protobuf`  
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -66,30 +67,35 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/seng330-assignment2: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/seng330-assignment2 ${OBJECTFILES} ${LDLIBSOPTIONS}
 
-${OBJECTDIR}/AICharacter.o: AICharacter.cpp 
+${OBJECTDIR}/AICharacter.o: nbproject/Makefile-${CND_CONF}.mk AICharacter.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AICharacter.o AICharacter.cpp
+	$(COMPILE.cc) -g -Wall `pkg-config --cflags protobuf` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AICharacter.o AICharacter.cpp
 
-${OBJECTDIR}/CharacterPrototype.o: CharacterPrototype.cpp 
+${OBJECTDIR}/CharacterProtobuf.pb.o: nbproject/Makefile-${CND_CONF}.mk CharacterProtobuf.pb.cc 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CharacterPrototype.o CharacterPrototype.cpp
+	$(COMPILE.cc) -g -Wall `pkg-config --cflags protobuf` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CharacterProtobuf.pb.o CharacterProtobuf.pb.cc
 
-${OBJECTDIR}/CharacterPrototypeFactory.o: CharacterPrototypeFactory.cpp 
+${OBJECTDIR}/CharacterPrototype.o: nbproject/Makefile-${CND_CONF}.mk CharacterPrototype.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CharacterPrototypeFactory.o CharacterPrototypeFactory.cpp
+	$(COMPILE.cc) -g -Wall `pkg-config --cflags protobuf` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CharacterPrototype.o CharacterPrototype.cpp
 
-${OBJECTDIR}/PlayableCharacter.o: PlayableCharacter.cpp 
+${OBJECTDIR}/CharacterPrototypeFactory.o: nbproject/Makefile-${CND_CONF}.mk CharacterPrototypeFactory.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PlayableCharacter.o PlayableCharacter.cpp
+	$(COMPILE.cc) -g -Wall `pkg-config --cflags protobuf` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CharacterPrototypeFactory.o CharacterPrototypeFactory.cpp
 
-${OBJECTDIR}/main.o: main.cpp 
+${OBJECTDIR}/PlayableCharacter.o: nbproject/Makefile-${CND_CONF}.mk PlayableCharacter.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -g -std=c++11 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -g -Wall `pkg-config --cflags protobuf` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PlayableCharacter.o PlayableCharacter.cpp
+
+${OBJECTDIR}/main.o: nbproject/Makefile-${CND_CONF}.mk main.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall `pkg-config --cflags protobuf` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:

@@ -7,21 +7,21 @@ CND_BASEDIR=`pwd`
 CND_BUILDDIR=build
 CND_DISTDIR=dist
 # Debug configuration
-CND_PLATFORM_Debug=GNU-Linux-x86
-CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux-x86
+CND_PLATFORM_Debug=GNU-Linux
+CND_ARTIFACT_DIR_Debug=dist/Debug/GNU-Linux
 CND_ARTIFACT_NAME_Debug=seng330-assignment2
-CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux-x86/seng330-assignment2
-CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux-x86/package
+CND_ARTIFACT_PATH_Debug=dist/Debug/GNU-Linux/seng330-assignment2
+CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
 CND_PACKAGE_NAME_Debug=seng330-assignment2.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux-x86/package/seng330-assignment2.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/seng330-assignment2.tar
 # Release configuration
-CND_PLATFORM_Release=GNU-Linux-x86
-CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux-x86
+CND_PLATFORM_Release=GNU-Linux
+CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
 CND_ARTIFACT_NAME_Release=seng330-assignment2
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux-x86/seng330-assignment2
-CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux-x86/package
+CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/seng330-assignment2
+CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
 CND_PACKAGE_NAME_Release=seng330-assignment2.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux-x86/package/seng330-assignment2.tar
+CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/seng330-assignment2.tar
 #
 # include compiler specific variables
 #

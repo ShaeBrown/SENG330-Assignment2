@@ -1,0 +1,17 @@
+/* This is example of protobuf message */
+
+message Character
+{
+
+    enum Type {
+        AI = 3;
+        Playable = 4;
+    }
+    required string name = 1;
+    required Type type = 2;
+}
+
+message CharacterList 
+{
+    repeated Character character = 5;
+}

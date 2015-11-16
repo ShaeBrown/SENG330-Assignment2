@@ -21,7 +21,7 @@ FC=gfortran
 AS=as
 
 # Macros
-CND_PLATFORM=GNU-Linux-x86
+CND_PLATFORM=GNU-Linux
 CND_DLIB_EXT=so
 CND_CONF=Release
 CND_DISTDIR=dist
@@ -36,6 +36,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/AICharacter.o \
+	${OBJECTDIR}/CharacterProtobuf.pb.o \
 	${OBJECTDIR}/CharacterPrototype.o \
 	${OBJECTDIR}/CharacterPrototypeFactory.o \
 	${OBJECTDIR}/PlayableCharacter.o \
@@ -70,6 +71,11 @@ ${OBJECTDIR}/AICharacter.o: AICharacter.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AICharacter.o AICharacter.cpp
+
+${OBJECTDIR}/CharacterProtobuf.pb.o: CharacterProtobuf.pb.cc 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CharacterProtobuf.pb.o CharacterProtobuf.pb.cc
 
 ${OBJECTDIR}/CharacterPrototype.o: CharacterPrototype.cpp 
 	${MKDIR} -p ${OBJECTDIR}
