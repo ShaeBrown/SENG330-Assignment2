@@ -1,0 +1,133 @@
+\hypertarget{classCharacterPrototype}{}\section{Character\+Prototype Class Reference}
+\label{classCharacterPrototype}\index{Character\+Prototype@{Character\+Prototype}}
+
+
+{\ttfamily \#include $<$Character\+Prototype.\+h$>$}
+
+Inheritance diagram for Character\+Prototype\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classCharacterPrototype}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCharacterPrototype_a6485d2e9c20779dc8f56943e63929e62}{Character\+Prototype} (std\+::string name, std\+::string type)
+\item 
+\hyperlink{classCharacterPrototype_abe3e17663cb992859d4fc3f3271e70e3}{Character\+Prototype} (const \hyperlink{classCharacterPrototype}{Character\+Prototype} \&orig)
+\item 
+virtual \hyperlink{classCharacterPrototype}{Character\+Prototype} $\ast$ \hyperlink{classCharacterPrototype_a7c3db310af19ff8c80eb3a7f20bd9986}{clone} ()=0
+\item 
+virtual void \hyperlink{classCharacterPrototype_aa656ad04dd911f24f2885dec50027bd8}{set\+Name} (std\+::string name)
+\item 
+virtual std\+::string \hyperlink{classCharacterPrototype_a97dd213c4515c631eac8957fec5d83fe}{get\+Name} ()
+\item 
+virtual std\+::string \hyperlink{classCharacterPrototype_abec1a7dacbee3aac9e67c75861b77ff1}{get\+Type} ()
+\item 
+virtual \hyperlink{classCharacterPrototype_a07cc2f45577611f264a954b1ff45777a}{$\sim$\+Character\+Prototype} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string {\bfseries name}\hypertarget{classCharacterPrototype_a38e7079fcedaaaa30e9af6b8f55e9790}{}\label{classCharacterPrototype_a38e7079fcedaaaa30e9af6b8f55e9790}
+
+\item 
+std\+::string {\bfseries type}\hypertarget{classCharacterPrototype_ac827564d5db88558075e89052a4d4eda}{}\label{classCharacterPrototype_ac827564d5db88558075e89052a4d4eda}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The base class \hyperlink{classCharacter}{Character} Prototype 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Character\+Prototype@{Character\+Prototype}!Character\+Prototype@{Character\+Prototype}}
+\index{Character\+Prototype@{Character\+Prototype}!Character\+Prototype@{Character\+Prototype}}
+\subsubsection[{Character\+Prototype(std\+::string name, std\+::string type)}]{\setlength{\rightskip}{0pt plus 5cm}Character\+Prototype\+::\+Character\+Prototype (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{name, }
+\item[{std\+::string}]{type}
+\end{DoxyParamCaption}
+)}\hypertarget{classCharacterPrototype_a6485d2e9c20779dc8f56943e63929e62}{}\label{classCharacterPrototype_a6485d2e9c20779dc8f56943e63929e62}
+Create a new character prototype 
+\begin{DoxyParams}{Parameters}
+{\em name} & the name of the character \\
+\hline
+{\em type} & the type of the character \\
+\hline
+\end{DoxyParams}
+\index{Character\+Prototype@{Character\+Prototype}!Character\+Prototype@{Character\+Prototype}}
+\index{Character\+Prototype@{Character\+Prototype}!Character\+Prototype@{Character\+Prototype}}
+\subsubsection[{Character\+Prototype(const Character\+Prototype \&orig)}]{\setlength{\rightskip}{0pt plus 5cm}Character\+Prototype\+::\+Character\+Prototype (
+\begin{DoxyParamCaption}
+\item[{const {\bf Character\+Prototype} \&}]{orig}
+\end{DoxyParamCaption}
+)}\hypertarget{classCharacterPrototype_abe3e17663cb992859d4fc3f3271e70e3}{}\label{classCharacterPrototype_abe3e17663cb992859d4fc3f3271e70e3}
+Copies a new character prototype 
+\begin{DoxyParams}{Parameters}
+{\em orig} & a reference to the character to copy \\
+\hline
+\end{DoxyParams}
+\index{Character\+Prototype@{Character\+Prototype}!````~Character\+Prototype@{$\sim$\+Character\+Prototype}}
+\index{````~Character\+Prototype@{$\sim$\+Character\+Prototype}!Character\+Prototype@{Character\+Prototype}}
+\subsubsection[{$\sim$\+Character\+Prototype()}]{\setlength{\rightskip}{0pt plus 5cm}Character\+Prototype\+::$\sim$\+Character\+Prototype (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classCharacterPrototype_a07cc2f45577611f264a954b1ff45777a}{}\label{classCharacterPrototype_a07cc2f45577611f264a954b1ff45777a}
+Deletes the character 
+
+\subsection{Member Function Documentation}
+\index{Character\+Prototype@{Character\+Prototype}!clone@{clone}}
+\index{clone@{clone}!Character\+Prototype@{Character\+Prototype}}
+\subsubsection[{clone()=0}]{\setlength{\rightskip}{0pt plus 5cm}virtual {\bf Character\+Prototype}$\ast$ Character\+Prototype\+::clone (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{classCharacterPrototype_a7c3db310af19ff8c80eb3a7f20bd9986}{}\label{classCharacterPrototype_a7c3db310af19ff8c80eb3a7f20bd9986}
+Clones a new character prototype, must be implemented by derived classes \begin{DoxyReturn}{Returns}
+A clone of the character 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{classAICharacter_a99b6f645c4e1f24d9701bac8f0dee596}{A\+I\+Character}, and \hyperlink{classPlayableCharacter_aadde0d9220aa0dd78b51bbbe87ecd628}{Playable\+Character}.
+
+\index{Character\+Prototype@{Character\+Prototype}!get\+Name@{get\+Name}}
+\index{get\+Name@{get\+Name}!Character\+Prototype@{Character\+Prototype}}
+\subsubsection[{get\+Name()}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Character\+Prototype\+::get\+Name (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classCharacterPrototype_a97dd213c4515c631eac8957fec5d83fe}{}\label{classCharacterPrototype_a97dd213c4515c631eac8957fec5d83fe}
+Get character\textquotesingle{}s name \begin{DoxyReturn}{Returns}
+the character\textquotesingle{}s name 
+\end{DoxyReturn}
+\index{Character\+Prototype@{Character\+Prototype}!get\+Type@{get\+Type}}
+\index{get\+Type@{get\+Type}!Character\+Prototype@{Character\+Prototype}}
+\subsubsection[{get\+Type()}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Character\+Prototype\+::get\+Type (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classCharacterPrototype_abec1a7dacbee3aac9e67c75861b77ff1}{}\label{classCharacterPrototype_abec1a7dacbee3aac9e67c75861b77ff1}
+Get character\textquotesingle{}s type \begin{DoxyReturn}{Returns}
+the character\textquotesingle{}s type 
+\end{DoxyReturn}
+\index{Character\+Prototype@{Character\+Prototype}!set\+Name@{set\+Name}}
+\index{set\+Name@{set\+Name}!Character\+Prototype@{Character\+Prototype}}
+\subsubsection[{set\+Name(std\+::string name)}]{\setlength{\rightskip}{0pt plus 5cm}void Character\+Prototype\+::set\+Name (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{name}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{classCharacterPrototype_aa656ad04dd911f24f2885dec50027bd8}{}\label{classCharacterPrototype_aa656ad04dd911f24f2885dec50027bd8}
+Set character\textquotesingle{}s name 
+\begin{DoxyParams}{Parameters}
+{\em name} & the new name \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Character\+Prototype.\+h\item 
+Character\+Prototype.\+cpp\end{DoxyCompactItemize}

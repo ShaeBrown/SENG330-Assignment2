@@ -45,7 +45,6 @@ int main(int argc, char** argv) {
     CharacterList players;
     
     GOOGLE_PROTOBUF_VERIFY_VERSION;
-    
   
     string file = "characters.txt";
     // Read the existing characters
