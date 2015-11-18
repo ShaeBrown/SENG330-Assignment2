@@ -57,7 +57,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=
+LDLIBSOPTIONS=`pkg-config --libs protobuf`  
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -70,32 +70,32 @@ ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/seng330-assignment2: ${OBJECTFILES}
 ${OBJECTDIR}/AICharacter.o: AICharacter.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AICharacter.o AICharacter.cpp
+	$(COMPILE.cc) -O2 `pkg-config --cflags protobuf` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/AICharacter.o AICharacter.cpp
 
 ${OBJECTDIR}/CharacterProtobuf.pb.o: CharacterProtobuf.pb.cc 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CharacterProtobuf.pb.o CharacterProtobuf.pb.cc
+	$(COMPILE.cc) -O2 `pkg-config --cflags protobuf` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CharacterProtobuf.pb.o CharacterProtobuf.pb.cc
 
 ${OBJECTDIR}/CharacterPrototype.o: CharacterPrototype.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CharacterPrototype.o CharacterPrototype.cpp
+	$(COMPILE.cc) -O2 `pkg-config --cflags protobuf` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CharacterPrototype.o CharacterPrototype.cpp
 
 ${OBJECTDIR}/CharacterPrototypeFactory.o: CharacterPrototypeFactory.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CharacterPrototypeFactory.o CharacterPrototypeFactory.cpp
+	$(COMPILE.cc) -O2 `pkg-config --cflags protobuf` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/CharacterPrototypeFactory.o CharacterPrototypeFactory.cpp
 
 ${OBJECTDIR}/PlayableCharacter.o: PlayableCharacter.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PlayableCharacter.o PlayableCharacter.cpp
+	$(COMPILE.cc) -O2 `pkg-config --cflags protobuf` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PlayableCharacter.o PlayableCharacter.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
-	$(COMPILE.cc) -O2 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	$(COMPILE.cc) -O2 `pkg-config --cflags protobuf` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
 
 # Subprojects
 .build-subprojects:

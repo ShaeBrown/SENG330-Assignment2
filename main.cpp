@@ -10,8 +10,13 @@
 #include <list>
 #include <iostream>
 
-#include"CharacterPrototypeFactory.h"
+
 #include"CharacterProtobuf.pb.h"
+#include"CharacterPrototypeFactory.h"
+#include"CharacterPrototype.h"
+#include"AICharacter.h"
+#include"PlayableCharacter.h"
+
 
 using namespace std;
 
@@ -48,7 +53,7 @@ int main(int argc, char** argv) {
   
     string file = "characters.txt";
     // Read the existing characters
-    fstream input(file, ios::in | ios::binary);
+    fstream input(file);
     if (!input) 
     {
         cout << "Creating a new file to save characters" << endl;
@@ -108,7 +113,7 @@ int main(int argc, char** argv) {
     }
     
     
-    fstream output(file, ios::out | ios::trunc | ios::binary);
+    fstream output(file);
     if (!players.SerializeToOstream(&output)) 
     {
         cerr << "Failed to save new characters" << endl;

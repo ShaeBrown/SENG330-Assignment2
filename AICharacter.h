@@ -9,6 +9,8 @@
 #define	AICHARACTER_H
 
 #include"CharacterPrototype.h"
+#include<string>
+
 /**
  * An AI Character, a derived class from the CharacterPrototype
  */

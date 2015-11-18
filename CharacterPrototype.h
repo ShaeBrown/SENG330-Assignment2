@@ -3,8 +3,9 @@
 #ifndef CHARACTERPROTOTYPE_H
 #define	CHARACTERPROTOTYPE_H
 
-
 #include <string>
+#include<iostream>
+
 
 /** The base class Character Prototype */
 class CharacterPrototype {
@@ -20,7 +21,7 @@ public:
      * Copies a new character prototype
      * @param orig a reference to the character to copy
      */
-    CharacterPrototype(const CharacterPrototype& orig);
+    CharacterPrototype(const CharacterPrototype& orig) = default;
      /**
      * Clones a new character prototype, must be implemented by derived classes
      * @returns A clone of the character

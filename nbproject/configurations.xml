@@ -36,6 +36,7 @@
                    kind="IMPORTANT_FILES_FOLDER">
       <itemPath>Makefile</itemPath>
     </logicalFolder>
+    <itemPath>INSTALL.txt</itemPath>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
@@ -75,6 +76,8 @@
       </item>
       <item path="CharacterPrototypeFactory.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="INSTALL.txt" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="PlayableCharacter.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="PlayableCharacter.h" ex="false" tool="3" flavor2="0">
@@ -94,6 +97,7 @@
         </cTool>
         <ccTool>
           <developmentMode>5</developmentMode>
+          <standard>8</standard>
         </ccTool>
         <fortranCompilerTool>
           <developmentMode>5</developmentMode>
@@ -101,6 +105,11 @@
         <asmTool>
           <developmentMode>5</developmentMode>
         </asmTool>
+        <linkerTool>
+          <linkerLibItems>
+            <linkerOptionItem>`pkg-config --libs protobuf`</linkerOptionItem>
+          </linkerLibItems>
+        </linkerTool>
       </compileType>
       <item path="AICharacter.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -119,6 +128,8 @@
       <item path="CharacterPrototypeFactory.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="CharacterPrototypeFactory.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="INSTALL.txt" ex="false" tool="3" flavor2="0">
       </item>
       <item path="PlayableCharacter.cpp" ex="false" tool="1" flavor2="0">
       </item>

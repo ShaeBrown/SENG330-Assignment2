@@ -1,8 +1,6 @@
 
 
 #include"AICharacter.h"
-#include<string>
-
 
 AICharacter::AICharacter(std::string name) : CharacterPrototype(name, "AI") {
   

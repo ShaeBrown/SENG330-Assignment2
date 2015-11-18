@@ -6,7 +6,6 @@
  */
 
 #include "CharacterPrototype.h"
-#include<iostream>
 
 
 

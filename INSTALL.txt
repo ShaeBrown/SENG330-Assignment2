@@ -1,0 +1,17 @@
+*****************************
+*       Requirements        *
+*****************************
+- C++ 11
+- Google Protocol Buffers 2.5.0
+
+*****************************
+*       Installation        *
+*****************************
+
+From the command line
+- cd <root folder of the project>
+- make
+- cd dist
+- cd Release
+- cd <your operating system>
+- ./seng330-assignment2
