@@ -23,6 +23,7 @@
       <itemPath>CharacterPrototype.cpp</itemPath>
       <itemPath>CharacterPrototypeFactory.cpp</itemPath>
       <itemPath>PlayableCharacter.cpp</itemPath>
+      <itemPath>TestSuite.cpp</itemPath>
       <itemPath>main.cpp</itemPath>
     </logicalFolder>
     <logicalFolder name="TestFiles"
@@ -53,6 +54,9 @@
           <warningLevel>2</warningLevel>
         </ccTool>
         <linkerTool>
+          <linkerAddLib>
+            <pElem>../../../../../Software/googletest/googletest/include</pElem>
+          </linkerAddLib>
           <linkerLibItems>
             <linkerOptionItem>`pkg-config --libs protobuf`</linkerOptionItem>
           </linkerLibItems>
@@ -81,6 +85,8 @@
       <item path="PlayableCharacter.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="PlayableCharacter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TestSuite.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>
@@ -109,6 +115,7 @@
           <linkerLibItems>
             <linkerOptionItem>`pkg-config --libs protobuf`</linkerOptionItem>
           </linkerLibItems>
+          <commandLine>-lgtest</commandLine>
         </linkerTool>
       </compileType>
       <item path="AICharacter.cpp" ex="false" tool="1" flavor2="0">
@@ -134,6 +141,8 @@
       <item path="PlayableCharacter.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="PlayableCharacter.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="TestSuite.cpp" ex="false" tool="1" flavor2="0">
       </item>
       <item path="main.cpp" ex="false" tool="1" flavor2="0">
       </item>

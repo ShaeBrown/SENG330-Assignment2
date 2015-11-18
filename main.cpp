@@ -16,7 +16,7 @@
 #include"CharacterPrototype.h"
 #include"AICharacter.h"
 #include"PlayableCharacter.h"
-
+#include "gtest/gtest.h" 
 
 using namespace std;
 
@@ -45,6 +45,9 @@ void serialize(CharacterList& list, CharacterPrototype* character) {
 
 
 int main(int argc, char** argv) {
+    
+    ::testing::InitGoogleTest(&argc, argv);
+    cout << RUN_ALL_TESTS();
     
     CharacterPrototypeFactory* factory = new CharacterPrototypeFactory();
     CharacterList players;

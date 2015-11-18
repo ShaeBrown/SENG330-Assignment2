@@ -40,6 +40,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/CharacterPrototype.o \
 	${OBJECTDIR}/CharacterPrototypeFactory.o \
 	${OBJECTDIR}/PlayableCharacter.o \
+	${OBJECTDIR}/TestSuite.o \
 	${OBJECTDIR}/main.o
 
 
@@ -57,7 +58,7 @@ FFLAGS=
 ASFLAGS=
 
 # Link Libraries and Options
-LDLIBSOPTIONS=`pkg-config --libs protobuf`  
+LDLIBSOPTIONS=-L../../../../../Software/googletest/googletest/include `pkg-config --libs protobuf`  
 
 # Build Targets
 .build-conf: ${BUILD_SUBPROJECTS}
@@ -91,6 +92,11 @@ ${OBJECTDIR}/PlayableCharacter.o: nbproject/Makefile-${CND_CONF}.mk PlayableChar
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -g -Wall `pkg-config --cflags protobuf` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PlayableCharacter.o PlayableCharacter.cpp
+
+${OBJECTDIR}/TestSuite.o: nbproject/Makefile-${CND_CONF}.mk TestSuite.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -g -Wall `pkg-config --cflags protobuf` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TestSuite.o TestSuite.cpp
 
 ${OBJECTDIR}/main.o: nbproject/Makefile-${CND_CONF}.mk main.cpp 
 	${MKDIR} -p ${OBJECTDIR}

@@ -40,6 +40,7 @@ OBJECTFILES= \
 	${OBJECTDIR}/CharacterPrototype.o \
 	${OBJECTDIR}/CharacterPrototypeFactory.o \
 	${OBJECTDIR}/PlayableCharacter.o \
+	${OBJECTDIR}/TestSuite.o \
 	${OBJECTDIR}/main.o
 
 
@@ -65,7 +66,7 @@ LDLIBSOPTIONS=`pkg-config --libs protobuf`
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/seng330-assignment2: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/seng330-assignment2 ${OBJECTFILES} ${LDLIBSOPTIONS}
+	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/seng330-assignment2 ${OBJECTFILES} ${LDLIBSOPTIONS} -lgtest
 
 ${OBJECTDIR}/AICharacter.o: AICharacter.cpp 
 	${MKDIR} -p ${OBJECTDIR}
@@ -91,6 +92,11 @@ ${OBJECTDIR}/PlayableCharacter.o: PlayableCharacter.cpp
 	${MKDIR} -p ${OBJECTDIR}
 	${RM} "$@.d"
 	$(COMPILE.cc) -O2 `pkg-config --cflags protobuf` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/PlayableCharacter.o PlayableCharacter.cpp
+
+${OBJECTDIR}/TestSuite.o: TestSuite.cpp 
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.cc) -O2 `pkg-config --cflags protobuf` -std=c++11  -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/TestSuite.o TestSuite.cpp
 
 ${OBJECTDIR}/main.o: main.cpp 
 	${MKDIR} -p ${OBJECTDIR}
